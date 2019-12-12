@@ -3,7 +3,8 @@ const db = require("../data/db-config.js");
 module.exports = {
     find,
     findById,
-    findSteps
+    findSteps, 
+    add
 };
 
 //find()
@@ -24,20 +25,17 @@ function findSteps(scheme_id){
     .where({scheme_id})
 }
 
-// function findPosts(user_id) {
-//     return db('posts as p')
-//     .join('users as u', 'u.id', 'p.user_id')
-//     .select('p.id', 'p.contents', 'u.username') 
-//     .where({user_id})
-// }
-//resolves to newly created user
-// function add(user) {
-//     return db('users').insert(user)
-//     .then(ids => {
-//         return findById(ids[0]);
-//     })
 
-// }
+// add(scheme)
+function add(scheme){
+    return db('schemes')
+    .insert(scheme)
+    // .then(ids => {
+    //     return findById(ids[0])
+    // })
+}
+
+
 
 // function findPosts(user_id) {
 //     return db('posts as p')
