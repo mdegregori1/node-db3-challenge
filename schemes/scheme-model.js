@@ -2,6 +2,7 @@ const db = require("../data/db-config.js");
 
 module.exports = {
     find,
+    findById
 };
 
 //find()
@@ -9,9 +10,10 @@ function find() {
     return db('schemes');
 }
 
-// function findById(id) {
-//     return db('users').where({id}).first()
-// }
+//findById()
+function findById(id) {
+    return db('schemes').where({id}).first()
+}
 
 
 // function findPosts(user_id) {
